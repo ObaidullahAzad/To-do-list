@@ -10,18 +10,18 @@ const new_list = document.querySelector("#tasks");
 		const new_task = document.createElement('div');
 		new_task.classList.add('task');
 
-		const task_content_el = document.createElement('div');
-		task_content_el.classList.add('content');
+		const task_content = document.createElement('div');
+		task_content.classList.add('content');
 
-		new_task.appendChild(task_content_el);
+		new_task.appendChild(task_content);
 
-		const task_input_el = document.createElement('input');
-		task_input_el.classList.add('text');
-		task_input_el.type = 'text';
-		task_input_el.value = task;
-		task_input_el.setAttribute('readonly', 'readonly');
+		const task_input = document.createElement('input');
+		task_input.classList.add('text');
+		task_input.type = 'text';
+		task_input.value = task;
+		task_input.setAttribute('readonly', 'readonly');
 
-		task_content_el.appendChild(task_input_el);
+		task_content.appendChild(task_input);
 
 		const task_actions_el = document.createElement('div');
 		task_actions_el.classList.add('actions');
@@ -46,11 +46,11 @@ const new_list = document.querySelector("#tasks");
 		task_edit_el.addEventListener('click', (e) => {
 			if (task_edit_el.innerText.toLowerCase() == "edit") {
 				task_edit_el.innerHTML = '<ion-icon name="save-outline"></ion-icon>';
-				task_input_el.removeAttribute("readonly");
-				task_input_el.focus();
+				task_input.removeAttribute("readonly");
+				task_input.focus();
 			} else {
 				task_edit_el.innerHTML = "Edit";
-				task_input_el.setAttribute("readonly", "readonly");
+				task_input.setAttribute("readonly", "readonly");
 			}
 		});
 
